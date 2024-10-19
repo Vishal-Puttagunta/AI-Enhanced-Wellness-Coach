@@ -24,6 +24,28 @@ nav a {
     padding: 20px;
 }
 
+.parallax { 
+
+    /* The image used */ 
+
+    background-image: url(https://i.pinimg.com/564x/bd/a3/cd/bda3cdb66ddecfb055bbc3d953f181df.jpg); /* Replace with your image file */ 
+
+    /* Full height */ 
+
+    height: 500px; 
+    
+    /* Create the parallax effect */ 
+
+    background-attachment: fixed; 
+
+    background-position: center; 
+
+    background-repeat: no-repeat; 
+
+    background-size: cover; 
+
+} 
+
 .quiz_questions {
     display: flex;
     flex-direction: column;

@@ -22,138 +22,120 @@
     <section id="quiz">
         <h2>Take the Quiz</h2>
         <p>By taking this short quiz, you will find out what workout routine works best for you and your goals. Let's get started!</p>
-        <!-- You can add your quiz form or questions here -->
     </section>
 </div>
 
-<div class = "quiz_questions">
+<div class="quiz_questions">
     <h2>Wellness Questionnaire</h2>
-    <form id ="wellnessQuiz">
+    <form id="wellnessQuiz">
+        <!-- Age Question -->
         <div class="question">
             <p>1. What is your age?</p>
-                
-                    <input type="radio" id="q1a" name="age" value="16-24">
-                    <label for="q1a">16-24</label><br>
-                    <input type="radio" id="q1b" name="age" value="25-34">
-                    <label for="q1b">25-34</label><br>
-                    <input type="radio" id="q1c" name="age" value="35-44">
-                    <label for="q1c">35-44</label><br>
-                    <input type="radio" id="q1d" name="age" value="45-54">
-                    <label for="q1d">45-54</label><br>
-                    <input type="radio" id="q1e" name="age" value="55-64">
-                    <label for="q1e">55-64</label><br>
-                    <input type="radio" id="q1f" name="age" value="65+">
-                    <label for="q1f">65+</label><br>
-                
+            <input type="radio" id="q1a" name="age" value="16-24">
+            <label for="q1a">16-24</label><br>
+            <input type="radio" id="q1b" name="age" value="25-34">
+            <label for="q1b">25-34</label><br>
+            <input type="radio" id="q1c" name="age" value="35-44">
+            <label for="q1c">35-44</label><br>
+            <input type="radio" id="q1d" name="age" value="45-54">
+            <label for="q1d">45-54</label><br>
+            <input type="radio" id="q1e" name="age" value="55-64">
+            <label for="q1e">55-64</label><br>
+            <input type="radio" id="q1f" name="age" value="65+">
+            <label for="q1f">65+</label><br>
         </div>
 
-
+        <!-- Height Question -->
         <div class="question">
             <p>2. What is your height?</p>
-            <label for="height_ft">Select your height in ft:</label>
+            <label for="height_ft">Height in feet:</label>
             <select id="height_ft" name="height_ft">
-                <option value="0" id ="q2">0</option>
-                <option value="1" id ="q2">1</option>
-                <option value="2" id = "q2">2</option>
-                <option value="3" id = "q2">3</option>
-                <option value="4" id = "q2">4</option>
-                <option value="5" id = "q2">5</option>
-                <option value="6" id = "q2">6</option>
-                <option value="7" id = "q2">7</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
             </select>
 
-            <label for="height_in">Select your height in inches:</label>
-            <select id="height_in" name="height_ft">
-                <option value="0" id = "q2">0</option>
-                <option value="1"id = "q2">1</option>
-                <option value="2"id = "q2">2</option>
-                <option value="3"id = "q2">3</option>
-                <option value="4"id = "q2">4</option>
-                <option value="5"id = "q2">5</option>
-                <option value="6"id = "q2">6</option>
-                <option value="7"id = "q2">7</option>
-                <option value="8"id = "q2">8</option>
-                <option value="9"id = "q2">9</option>
-                <option value="10"id = "q2">10</option>
-                <option value="11"id = "q2">11</option>
-                <option value="12"id = "q2">12</option>
+            <label for="height_in">Height in inches:</label>
+            <select id="height_in" name="height_in">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
             </select>
         </div>
 
-
-
+        <!-- Weight Question -->
         <div class="question">
-            <p>3. Enter your weight</p>
+            <p>3. Enter your weight (lbs)</p>
             <input type="number" id="weight" name="weight" min="0" max="400" value="0" step="1" required>
         </div>
-        
 
+        <!-- Sex Question -->
         <div class="question">
             <p>4. What is your sex?</p>
-            <label for="height_ft">Select your sex:</label>
-            <select id="sex" name="height_ft">
+            <select id="sex" name="sex">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="notDisclosed">Prefer not to say</option>
             </select>
         </div>
 
-
+        <!-- Activity Level Question -->
         <div class="question">
             <p>5. Activity Level</p>
-            
-                <input type="radio" id="activity_level1" name="activity" value="sedentary">
-                <label for="q4a">Sedentary</label><br>
-                <input type="radio" id="activity_level2" name="activity" value="light">
-                <label for="q4b">Lightly Active</label><br>
-                <input type="radio" id="activity_level3" name="activity" value="moderate">
-                <label for="q4c">Moderately Active</label><br>
-                <input type="radio" id="activity_level4" name="activity" value="very">
-                <label for="q4d">Very Active</label><br>
-            
-            
-            
+            <input type="radio" id="activity_level1" name="activity" value="sedentary">
+            <label for="activity_level1">Sedentary</label><br>
+            <input type="radio" id="activity_level2" name="activity" value="light">
+            <label for="activity_level2">Lightly Active</label><br>
+            <input type="radio" id="activity_level3" name="activity" value="moderate">
+            <label for="activity_level3">Moderately Active</label><br>
+            <input type="radio" id="activity_level4" name="activity" value="very">
+            <label for="activity_level4">Very Active</label><br>
         </div>
 
-
+        <!-- Motivation Level Question -->
         <div class="question">
             <p>6. Motivation Level</p>
             <div class="scale-container">
                 <input type="range" id="motivation_level" min="0" max="100" value="50" step="1">
-                <div class="value-display"><span id="value">-</span>%</div>
+                <div class="value-display"><span id="value">50</span>%</div>
             </div>
-            
-            
         </div>
 
+        <!-- Submit Button -->
         <div style="text-align: center;">
-            <button type="submit" id = "submit_button" class="button">Submit</button>
+            <button type="button" id="submit_button" class="button">Submit</button>
         </div>
     </form>
 </div>
 
-<h2> Your Score: </h2> 
-<p id = "final_score"> press submit </p>
-
-
+<!-- Result Section -->
+<p id="final_score">Press submit to see your score</p>
 
 <footer>
     <p>&copy; 2024 AI-Enhancement Wellness Coach. All rights reserved.</p>
 </footer>
 
+<script src="js_website_code.js"></script>
+
+<!-- Script for the quiz logic -->
 <script>
-    
+    // Update motivation display
     const scaleInput = document.getElementById('motivation_level');
     const valueDisplay = document.getElementById('value');
 
-    // Update the display value when the slider is dragged
     scaleInput.addEventListener('input', function() {
         valueDisplay.textContent = this.value;
     });
 </script>
-
-<script> src = "js_website_code.js"</script>
-
 
 </body>
 </html>
