@@ -73,10 +73,10 @@ function handleClick() {
     const bmi = calculateBMI(heightInMeters, weightInKg);
     const score = calculateScore(sex, activityLevel, bmi, motivationLevel);
 
-    document.getElementById('final_score').innerText = "Your BMI is: " + bmi.toFixed(2) + ", Your Score: " + score;
+    //document.getElementById('final_score').innerText = "Your BMI is: " + bmi.toFixed(2) + ", Your Score: " + score;
 
     // Download file with score
-    const blob = new Blob([`Your BMI is: ${bmi.toFixed(2)}\nYour Score: ${score}`], { type: 'text/plain' });
+    const blob = new Blob([`${score}`], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
