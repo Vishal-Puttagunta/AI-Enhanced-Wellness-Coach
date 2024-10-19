@@ -80,7 +80,15 @@
 
 
         <div class="question">
-            <p>3. What is your sex?</p>
+            <p>3. Enter your weight</p>
+            <div class="scale-container">
+                <input type="range" id="scale" min="0" max="600" value="0" step="1">
+                <div class="value-display"><span id="value">0</span></div>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. What is your sex?</p>
             <label for="height_ft">Select your sex:</label>
             <select id="height_ft" name="height_ft">
                 <option value="male">Male</option>
@@ -91,7 +99,7 @@
 
 
         <div class="question">
-            <p>4. Activity Level</p>
+            <p>5. Activity Level</p>
             <input type="radio" id="q4a" name="age" value="sedentary">
             <label for="q4a">Sedentary</label><br>
             <input type="radio" id="q4a" name="age" value="light">
@@ -106,7 +114,7 @@
 
 
         <div class="question">
-            <p>4. Motivation Level</p>
+            <p>6. Motivation Level</p>
             <div class="scale-container">
                 <input type="range" id="scale" min="0" max="100" value="50" step="1">
                 <div class="value-display"><span id="value">50</span>%</div>
