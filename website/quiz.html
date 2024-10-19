@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take the Quiz - AI-Enhancement Wellness Coach</title>
+    <link rel="stylesheet" href="css_code.css"> <!-- Ensure this path is correct -->
+</head>
+<body>
+
+<header>
+    <h1>Welcome to the AI-Enhancement Wellness Coach</h1>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="quiz.html">Take the Quiz</a> <!-- Updated link -->
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<div class="content">
+    <section id="quiz">
+        <h2>Take the Quiz</h2>
+        <p>By taking this short quiz, you will find out what workout routine works best for you and your goals. Let's get started!</p>
+        <!-- You can add your quiz form or questions here -->
+    </section>
+</div>
+
+<div class = "quiz_questions">
+    <h2>Wellness Questionnaire</h2>
+    <form id ="wellnessQuiz">
+        <div class="question">
+            <p>1. What is your age?</p>
+            <input type="radio" id="q1a" name="age" value="16-24">
+            <label for="q1a">16-24</label><br>
+            <input type="radio" id="q1b" name="age" value="25-34">
+            <label for="q1b">25-34</label><br>
+            <input type="radio" id="q1c" name="age" value="35-44">
+            <label for="q1c">35-44</label><br>
+            <input type="radio" id="q1d" name="age" value="45-54">
+            <label for="q1d">45-54</label><br>
+            <input type="radio" id="q1e" name="age" value="55-64">
+            <label for="q1e">55-64</label><br>
+            <input type="radio" id="q1f" name="age" value="65+">
+            <label for="q1f">65+</label><br>
+        </div>
+
+
+        <div class="question">
+            <p>2. What is your height?</p>
+            <label for="height_ft">Select your height in ft:</label>
+            <select id="height_ft" name="height_ft">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+
+            <label for="height_ft">Select your height in inches:</label>
+            <select id="height_ft" name="height_ft">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+        </div>
+
+
+        <div class="question">
+            <p>3. What is your sex?</p>
+            <label for="height_ft">Select your sex:</label>
+            <select id="height_ft" name="height_ft">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="notDisclosed">Prefer not to say</option>
+            </select>
+        </div>
+
+
+        <div class="question">
+            <p>4. Activity Level</p>
+            <input type="radio" id="q4a" name="age" value="sedentary">
+            <label for="q4a">Sedentary</label><br>
+            <input type="radio" id="q4a" name="age" value="light">
+            <label for="q4b">Lightly Active</label><br>
+            <input type="radio" id="q4c" name="age" value="moderate">
+            <label for="q4c">Moderately Active</label><br>
+            <input type="radio" id="q4d" name="age" value="very">
+            <label for="q4d">Very Active</label><br>
+            
+            
+        </div>
+
+
+        <div class="question">
+            <p>4. Motivation Level</p>
+            <div class="scale-container">
+                <input type="range" id="scale" min="0" max="100" value="50" step="1">
+                <div class="value-display"><span id="value">50</span>%</div>
+            </div>
+            
+            
+        </div>
+
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 AI-Enhancement Wellness Coach. All rights reserved.</p>
+</footer>
+
+<script>
+    const scaleInput = document.getElementById('scale');
+    const valueDisplay = document.getElementById('value');
+
+    // Update the display value when the slider is dragged
+    scaleInput.addEventListener('input', function() {
+        valueDisplay.textContent = this.value;
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Parallax effect */
+.parallax {
+    /* The image used */
+    background-image: url(https://i.pinimg.com/564x/bd/a3/cd/bda3cdb66ddecfb055bbc3d953f181df.jpg); /* Replace with your image file */
+    
+    /* Full height */
+    height: 500px;
+
+    /* Create the parallax effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Content styling */
+.content {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 35px;
+}
+.quiz_questions {
+    margin-bottom: 150px; /* Adjust this value as needed */
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 5px 0;
+    background: #35424a;
+    color: #ffffff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+        
+}
