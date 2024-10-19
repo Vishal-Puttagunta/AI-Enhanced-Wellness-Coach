@@ -1,103 +1,125 @@
-//initializing the input using prompt
-const prompt = require('prompt-sync')();
+//initializing the scanner
+const input = require('readline-sync');
 
-//prompt user to enter height and weight
-const heightPreference = prompt("What is your height unit preference (imperial or metric): ");
-
-//initializing height to empty value
-let height = 0;
-
-//two if statements for whichever system the user uses
-if (heightPreference === "imperial") {
-    height = parseFloat(prompt("Enter your height in inches: "));
-}
-
-if (heightPreference === "metric") {
-    height = parseFloat(prompt("Enter your height in cm: "));
-}
+//getting height
+const height = input.question("Enter your height in inches: ");
+const heightInMeters = height * 0.0254;
 
 //prompting user to enter which preference for weight
-const weightPreference = prompt("What is your weight preference (kg or lb): ");
 
 //asking user to enter their weight
-const weight = parseFloat(prompt("Enter your weight: "));
+const weight = input.question("Enter your weight in lbs: ");
+const weightInKg = weight / 2.25;
 
-//displaying the final BMI
-console.log("Your BMI is: ", calculateBMI(heightPreference, weightPreference, height, weight).toFixed(2));
+//displaying the final bmi
+process.stdout.write("Your BMI is: ");
 
-//Example score calculation (this can be dynamic as well)
-console.log(calculateScore("Male", "Sedentary", 20, 60));
+//formatting the BMI to two decimals
+const bmi = calculateBMI(heightInMeters, weightInKg);
+console.log(bmi.toFixed(2));
 
-//function for bmi
-function calculateBMI(heightPreference, weightPreference, height, weight) {
-    let weightInKG = 0;
+//ask user for their sex
+const sex = input.question("What is your sex (Male or Female): ");
+console.log();
 
-    //converting the height into meters for the final calculation
-    if (heightPreference === "imperial") {
-        height = height * 0.0254;
-    }
-    if (heightPreference === "metric") {
-        height = height / 100;
-    }
+//ask user for their activity level
+const activityLevel = input.question("How would you rate your activity level? (Sedentary, Lightlyactive, Moderatelyactive, Veryactive): ");
+console.log();
 
-    //converting the weight into kilograms
-    if (weightPreference === "lb") {
-        weightInKG = weight / 2.25;
-    } else {
-        weightInKG = weight;
-    }
+//ask user to rank their motivation level 1-100
+const motivation = input.question("Rank your motivation level from 1-100: ");
+console.log();
+
+//implementing the calculate score method
+console.log("Score is: " + calculateScore(sex, activityLevel, bmi, motivation));
+
+/*
+Give each person a score 1-100
+
+If they are most physically gifted they get a higher score
+
+If they are weaker or not in shape, less score
+
+Aspects that play into it include, BMI, sex, Activity Level, motivation/goals
+
+The score we assign to the user in the end is the score that the AI model will use to create the personalized workout routine.
+
+Ex.
+
+Score = 81,      person is above average in physical capability, therefore will get a somewhat difficult routine
+
+Score = 35.      Person is not in shape, will get an easier or less intensive routine
+*/
+
+
+
+//method for bmi
+function calculateBMI(height, weight) {
+    //initializing variable to empty value
 
     //calculating the BMI using formula
-    const bmi = weightInKG / (height * height);
+    const bmi = weight / (height * height);
 
     //returning final value
     return bmi;
 }
 
-function calculateScore(sex, activityLevel, bmi, motivationLevel) {
+function calculateScore(sex, activityLevel, bmi, motivationLevel){
+    //initializing the points variable
     let points = 0;
 
     //if statements for the BMI category
-    if (bmi < 18.5) {
+    if(bmi < 18.5) {
         points += 10;
-    } else if (bmi >= 18.5 && bmi <= 25) {
+    }
+    else if(bmi >= 18.5 && bmi <= 25) {
         points += 20;
-    } else if (bmi > 25 && bmi <= 30) {
+    }
+    else if(bmi > 25 && bmi <= 30) {
         points += 15;
-    } else if (bmi > 30) {
+    }
+    else if(bmi > 30) {
         points += 5;
     }
+
 
     //if statements for sex
-    if (sex === "Male") {
+    if(sex === "Male"){
         points += 6;
     }
-    if (sex === "Female") {
+    if(sex === "Female"){
         points += 4;
     }
+    else{
+        points += 3;
+    }
+
 
     //if statements for activity level
-    if (activityLevel === "Sedentary") {
+    if(activityLevel === "Sedentary"){
         points += 5;
     }
-    if (activityLevel === "Lightly active") {
+    if(activityLevel === "Lightlyactive"){
         points += 15;
     }
-    if (activityLevel === "Moderately active") {
+    if(activityLevel === "Moderatelyactive"){
         points += 20;
     }
-    if (activityLevel === "Very active") {
+    if(activityLevel === "Veryactive"){
         points += 30;
     }
 
     //if statements for motivation
-    if (motivationLevel < 20) {
+    if(motivationLevel < 20){
         points += 5;
-    } else if (motivationLevel >= 20 && motivationLevel < 70) {
+    }
+    else if(motivationLevel >=20 && motivationLevel < 70){
         points += 15;
-    } else if (motivationLevel >= 70) {
+    }
+    else if(motivationLevel >= 70){
         points += 30;
     }
 
-    return points * (100.0/86);
+    const bmiMultiplier = points * (100.0/86);
+    return Math.floor(bmiMultiplier);
 }
