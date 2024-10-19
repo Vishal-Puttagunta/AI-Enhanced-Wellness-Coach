@@ -38,6 +38,24 @@ public class Main{
         //formatting the BMI to two decimals
         System.out.printf("%.2f", calculateBMI(heightPreference, weightPrefrence, height, weight));
         
+
+
+        /*Give each person a score 1-100
+
+        If they are most physically gifted they get a higher score
+
+        If they are weaker or not in shape, less score
+
+        Aspects that play into it include, BMI, sex, Activity Level, motivation/goals
+
+        The score we assign to the user in the end is the score that the AI model will use to create the personalized workout routine.
+
+        Ex.
+
+        Score = 81,      person is above average in physical capability, therefore will get a somewhat difficult routine
+
+        Score = 35.      Person is not in shape, will get an easier or less intensive routine
+        */
         
     }
 
