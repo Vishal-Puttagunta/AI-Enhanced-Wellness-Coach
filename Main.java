@@ -10,6 +10,9 @@ public class Main{
         System.out.print("Enter your height in inches: ");
         double height = input.nextDouble();
 
+    
+
+
         //prompting user to enter which preference for weight
 
         //asking user to enter their weight
@@ -33,7 +36,7 @@ public class Main{
         System.out.println();
 
         //ask user for their activity level
-        System.out.print("How would you rate your activity level? (Sedentary, Lightlyactive, Moderatelyactive, Veryactive): ");
+        System.out.print("How would you rate your activity level? (Sedentary, Lightly active, Moderately active, Very active): ");
         String activityLevel = input.next();
         System.out.println();
 
@@ -114,19 +117,16 @@ public class Main{
         if(sex.equals("Female")){
             points += 4;
         }
-        else{
-            points += 3;
-        }
 
 
         //if statements for activity level
         if(activityLevel.equals("Sedentary")){
             points += 5;
         }
-        if(activityLevel.equals("Lightlyactive")){
+        if(activityLevel.equals("Lightly active")){
             points += 15;
         }
-        if(activityLevel.equals("Moderatelyactive")){
+        if(activityLevel.equals("Moderately active")){
             points += 20;
         }
         if(activityLevel.equals("Veryactive")){
