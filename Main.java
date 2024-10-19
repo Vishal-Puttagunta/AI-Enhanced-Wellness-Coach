@@ -10,9 +10,6 @@ public class Main{
         System.out.print("Enter your height in inches: ");
         double height = input.nextDouble();
 
-    
-
-
         //prompting user to enter which preference for weight
 
         //asking user to enter their weight
