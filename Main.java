@@ -5,38 +5,25 @@ public class Main{
         //initializing the scanner
         Scanner input = new Scanner(System.in);
 
-        //prompt user to enter height and weight
-        System.out.print("What is your height unit preference (imperial or metric): ");
-        String heightPreference = input.next();
 
-        //initializing height to empty value
-        double height = 0;
+        //getting height
+        System.out.print("Enter your height in inches: ");
+        double height = input.nextDouble();
 
-        //two if statements for whichever system the user uses
-        if(heightPreference.equals("imperial")){
-            System.out.print("Enter your height in inches: ");
-            height = input.nextDouble();
-        }
-        
-        if(heightPreference.equals("metric")){
-            System.out.print("Enter your height in cm: ");
-            height = input.nextDouble();
-        }
+    
 
 
         //prompting user to enter which preference for weight
-        System.out.print("What is your weight preference (kg or lb): ");
-        String weightPreference = input.next();
 
         //asking user to enter their weight
-        System.out.print("Enter your weight: ");
+        System.out.print("Enter your weight in lbs: ");
         double weight = input.nextDouble();
 
         //displaying the final bmi
         System.out.print("Your BMI is: ");
 
         //formatting the BMI to two decimals
-        double bmi = calculateBMI(heightPreference, weightPreference, height, weight);
+        double bmi = calculateBMI(height, weight);
         System.out.printf("%.2f", bmi);
 
         System.out.println();
@@ -60,7 +47,7 @@ public class Main{
 
 
         //implementing the calculate score method
-        System.out.println(calculateScore("Male", "Sedentary", bmi, motivation));
+        System.out.println("Score is: " + calculateScore(sex, activityLevel, bmi, motivation));
 
 
 
@@ -87,22 +74,15 @@ public class Main{
     }
 
     //method for bmi
-    public static double calculateBMI(String heightPreference, String weightPreference, double height, double weight) {
+    public static double calculateBMI(double height, double weight) {
         //initializing variable to empty value
-        double weightInKG = 0;
 
         //converting the height into meters for the final calculation
-        if(heightPreference.equals("imperial")){
-            height = height*0.0254;
-        }
-        if(heightPreference.equals("metric")){
-            height = height/100;
-        }
+        height = height*0.0254;
 
         //converting the weight into kilograms
-        if(weightPreference.equals("lb")){
-            weight = (weight/2.25);
-        }
+        weight = (weight/2.25);
+    
 
         //calculating the BMI using formula
         double bmi = weight/(height*height);
@@ -149,7 +129,7 @@ public class Main{
         if(activityLevel.equals("Moderately active")){
             points += 20;
         }
-        if(activityLevel.equals("Very active")){
+        if(activityLevel.equals("Veryactive")){
             points += 30;
         }
 
@@ -164,6 +144,7 @@ public class Main{
             points += 30;
         }
 
-        return(points);
+        double bmiMultiplier = points * (100.0/86);
+        return (int) bmiMultiplier;
     }
 }
