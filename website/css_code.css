@@ -1,4 +1,4 @@
-body {
+body { 
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -19,31 +19,46 @@ nav a {
     font-weight: bold;
 }
 
-/* Parallax effect */
-.parallax {
-    /* The image used */
-    background-image: url(https://i.pinimg.com/564x/bd/a3/cd/bda3cdb66ddecfb055bbc3d953f181df.jpg); /* Replace with your image file */
-    
-    /* Full height */
-    height: 500px;
-
-    /* Create the parallax effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 /* Content styling */
 .content {
     padding: 20px;
 }
 
-section {
-    margin-bottom: 35px;
-}
 .quiz_questions {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    min-height: 70vh; /* Adjust height as needed */
     margin-bottom: 150px; /* Adjust this value as needed */
+}
+
+/* Center the questions */
+.question {
+    margin-bottom: 20px; /* Space between questions */
+    text-align: center; /* Center text within the question */
+}
+
+/* Button styling */
+.button {
+    background-color: rgb(7, 191, 80); /* Green background */
+    border: none;
+    color: #ffffff; /* White text */
+    padding: 15px 32px;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Button hover effect */
+.button:hover {
+    background-color: #055b05; /* Darker green on hover */
 }
 
 /* Footer styling */
@@ -56,6 +71,4 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-
-        
 }

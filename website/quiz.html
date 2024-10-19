@@ -79,13 +79,12 @@
         </div>
 
 
+
         <div class="question">
             <p>3. Enter your weight</p>
-            <div class="scale-container">
-                <input type="range" id="scale" min="0" max="600" value="0" step="1">
-                <div class="value-display"><span id="value">0</span></div>
-            </div>
+            <input type="number" id="weightVal" name="weight" min="0" max="400" value="0" step="1" required>
         </div>
+        
 
         <div class="question">
             <p>4. What is your sex?</p>
@@ -117,14 +116,19 @@
             <p>6. Motivation Level</p>
             <div class="scale-container">
                 <input type="range" id="scale" min="0" max="100" value="50" step="1">
-                <div class="value-display"><span id="value">50</span>%</div>
+                <div class="value-display"><span id="value">-</span>%</div>
             </div>
             
             
         </div>
 
+        <div style="text-align: center;">
+            <button type="submit" class="button">Submit</button>
+        </div>
     </form>
 </div>
+
+
 
 <footer>
     <p>&copy; 2024 AI-Enhancement Wellness Coach. All rights reserved.</p>
