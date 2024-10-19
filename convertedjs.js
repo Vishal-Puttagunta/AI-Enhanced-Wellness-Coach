@@ -99,5 +99,5 @@ function calculateScore(sex, activityLevel, bmi, motivationLevel) {
         points += 30;
     }
 
-    return points;
+    return points * (100.0/86);
 }
