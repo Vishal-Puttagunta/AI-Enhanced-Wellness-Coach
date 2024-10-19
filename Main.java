@@ -26,7 +26,7 @@ public class Main{
 
         //prompting user to enter which preference for weight
         System.out.print("What is your weight preference (kg or lb): ");
-        String weightPrefrence = input.next();
+        String weightPreference = input.next();
 
         //asking user to enter their weight
         System.out.print("Enter your weight: ");
@@ -36,7 +36,7 @@ public class Main{
         System.out.print("Your BMI is: ");
 
         //formatting the BMI to two decimals
-        double bmi = calculateBMI(heightPreference, heightPreference, height, weight);
+        double bmi = calculateBMI(heightPreference, weightPreference, height, weight);
         System.out.printf("%.2f", bmi);
 
         System.out.println();
@@ -101,16 +101,14 @@ public class Main{
 
         //converting the weight into kilograms
         if(weightPreference.equals("lb")){
-            weightInKG = (weight/2.25);
-        }
-        else{
-            weightInKG = weight;
+            weight = (weight/2.25);
         }
 
         //calculating the BMI using formula
-        double bmi = weightInKG/(height*height);
+        double bmi = weight/(height*height);
 
         //returning final value
+        System.out.println("This is weight: " + weight + " This is height: " + height);
         return(bmi);
     }
 
