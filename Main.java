@@ -36,8 +36,33 @@ public class Main{
         System.out.print("Your BMI is: ");
 
         //formatting the BMI to two decimals
-        System.out.printf("%.2f", calculateBMI(heightPreference, weightPrefrence, height, weight));
-        
+        double bmi = calculateBMI(heightPreference, heightPreference, height, weight);
+        System.out.printf("%.2f", bmi);
+
+        System.out.println();
+
+
+
+        //ask user for their sex
+        System.out.print("What is your sex (Male or Female): ");
+        String sex = input.next();
+        System.out.println();
+
+        //ask user for their activity level
+        System.out.print("How would you rate your activity level? (Sedentary, Lightly active, Moderately active, Very active): ");
+        String activityLevel = input.next();
+        System.out.println();
+
+        //ask user to rank their motivation level 1-100
+        System.out.print("Rank your motivation level from 1-100: ");
+        int motivation = input.nextInt();
+        System.out.println();
+
+
+        //implementing the calculate score method
+        System.out.println(calculateScore("Male", "Sedentary", bmi, motivation));
+
+
 
 
         /*Give each person a score 1-100
@@ -57,7 +82,8 @@ public class Main{
         Score = 35.      Person is not in shape, will get an easier or less intensive routine
         */
         
-        System.out.println(calculateScore("Male", "Sedentary", 20, 60));
+        //calculateScore("Male", "Sedentary", 21.2, 60);
+
     }
 
     //method for bmi
