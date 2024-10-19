@@ -108,7 +108,6 @@ public class Main{
         double bmi = weight/(height*height);
 
         //returning final value
-        System.out.println("This is weight: " + weight + " This is height: " + height);
         return(bmi);
     }
 
