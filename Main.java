@@ -36,7 +36,7 @@ public class Main{
         System.out.println();
 
         //ask user for their activity level
-        System.out.print("How would you rate your activity level? (Sedentary, Lightly active, Moderately active, Very active): ");
+        System.out.print("How would you rate your activity level? (Sedentary, Lightlyactive, Moderatelyactive, Veryactive): ");
         String activityLevel = input.next();
         System.out.println();
 
@@ -117,16 +117,19 @@ public class Main{
         if(sex.equals("Female")){
             points += 4;
         }
+        else{
+            points += 3;
+        }
 
 
         //if statements for activity level
         if(activityLevel.equals("Sedentary")){
             points += 5;
         }
-        if(activityLevel.equals("Lightly active")){
+        if(activityLevel.equals("Lightlyactive")){
             points += 15;
         }
-        if(activityLevel.equals("Moderately active")){
+        if(activityLevel.equals("Moderatelyactive")){
             points += 20;
         }
         if(activityLevel.equals("Veryactive")){
@@ -144,7 +147,7 @@ public class Main{
             points += 30;
         }
 
-        int bmiMultiplier = points * (100/86);
-        return(bmiMultiplier);
+        double bmiMultiplier = points * (100.0/86);
+        return (int) bmiMultiplier;
     }
 }
