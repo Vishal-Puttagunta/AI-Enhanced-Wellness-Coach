@@ -1,6 +1,9 @@
 //initializing the scanner
 const input = require('readline-sync');
 
+//getting age
+
+
 //getting height
 const height = input.question("Enter your height in inches: ");
 const heightInMeters = height * 0.0254;
