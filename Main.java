@@ -144,7 +144,7 @@ public class Main{
             points += 30;
         }
 
-        int bmiMultiplier = points * (100/86);
-        return(bmiMultiplier);
+        double bmiMultiplier = points * (100.0/86);
+        return (int) bmiMultiplier;
     }
 }
