@@ -49,8 +49,14 @@ def generate_weekly_workout_routine(score):
 
 def generate_workout():
     try:
-        # Get the score from the input field
-        score = int(score_entry.get())
+        score = 0
+        # Get the score from the generated text file
+        with open('score.txt', 'r') as file:
+            for line in file:
+                score = line.strip()
+
+        print(score)
+        
         # Call the function to generate the weekly workout routine
         workout_routine = generate_weekly_workout_routine(score)
         # Display the generated workout routine
@@ -65,11 +71,6 @@ root = tk.Tk()
 root.title("Personalized Weekly Workout Generator")
 
 # Create and place widgets
-tk.Label(root, text="Enter Physical Capability Score:").pack(pady=10)
-
-score_entry = tk.Entry(root)
-score_entry.pack(pady=5)
-
 generate_button = tk.Button(root, text="Generate Weekly Workout", command=generate_workout)
 generate_button.pack(pady=10)
 
