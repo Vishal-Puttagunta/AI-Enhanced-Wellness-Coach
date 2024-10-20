@@ -4,7 +4,7 @@ from tkinter import messagebox, scrolledtext  # Import scrolledtext for scrollab
 
 # Set up your OpenAI API endpoint and API key
 API_URL = "https://api.openai.com/v1/chat/completions"  # OpenAI chat completion endpoint
-API_KEY = "your_openai_api_key_here"  # Replace with your actual OpenAI API key
+API_KEY = "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 "  # Replace with your actual OpenAI API key
 
 def generate_weekly_workout_routine(score):
     # Create the input prompt for a weekly workout routine
