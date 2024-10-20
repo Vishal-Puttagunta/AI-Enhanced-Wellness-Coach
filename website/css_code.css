@@ -8,13 +8,15 @@ body {
 /* Header Styling */
 header {
     background-color: #fff;
-    padding: 15px 0;
+
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
 }
+
+
 
 header h1 {
     color: #35424a;
@@ -54,6 +56,7 @@ button.cta {
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
 button.cta:hover {
@@ -90,6 +93,24 @@ button.cta:hover {
 
 .quiz_questions {
     text-align: center;
+    border: 1px solid rgb(255, 202, 111);
+    background-color: rgb(242, 203, 135);
+    border-radius: 25%;
+    margin-right: 450px;
+    margin-left: 450px;
+    padding-bottom: 20px;
+}
+
+.main-body {
+    background-image: url("img1.png");
+    background-repeat: no-repeat;
+    width: 1500px;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 15px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 /* Icon Section (Features or Services) */
@@ -122,15 +143,35 @@ button.cta:hover {
 
 /* Footer */
 footer {
+    padding: 10px 0;
     background-color: #35424a;
     color: white;
     text-align: center;
-    padding: 10px 0; 
     position: relative;
     bottom: 0;
     width: 100%;
-    margin-top: 20px;
+    position: fixed;
     
+    
+}
+
+#contact {
+    background-color: rgb(242, 203, 135);
+    background-repeat: no-repeat;
+    
+    height: 1000px;
+    padding-top: 20px;
+    padding-right: 50px;
+    text-align: center;
+}
+
+.content-components {
+    padding-top: 250px;
+}
+
+#work-out {
+    background-image: url("closeup.jpg");
+    border: 1px solid black;
 }
 
 
