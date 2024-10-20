@@ -1,10 +1,59 @@
+import requests
 import tkinter as tk
-from workoutgenerate import generate_workout_routine
 
 # Create the main application window
 root = tk.Tk()
 root.title("Personalized Workout Generator")
 root.geometry("400x300")
+
+# Set up your API key
+API_URL = "https://api-inference.huggingface.co/models/gpt2"  # You can change this to another model
+headers = {"Authorization": f"Bearer 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"}
+
+# Function to send request to Hugging Face's API
+def query(payload):
+    response = requests.post(API_URL, headers=headers, json=payload)
+    return response.json()
+
+# Example usage: generating a workout routine
+def generate_workout_routine(score):
+    prompt = """1. For a score of 5:  
+
+       - Monday: Chest and Back 
+
+       - Tuesday: Legs 
+
+       - Wednesday: Shoulders and Arms 
+
+       - Thursday: Cardio 
+
+       - Friday: Full Body 
+
+       - Saturday: Active Recovery 
+
+       - Sunday: Rest 
+
+  
+
+    2. For a score of 8: 
+
+       - Monday: Push (Bench Press, Overhead Press) 
+
+       - Tuesday: Pull (Pull-Ups, Rows) 
+
+       - Wednesday: Legs (Squats, Deadlifts) 
+
+       - Thursday: Core (Planks, Russian Twists) 
+
+       - Friday: Cardio (Running, HIIT) 
+
+       - Saturday: Flexibility (Yoga, Stretching) 
+
+       - Sunday: Rest 
+    """
+    
+    data = query({"inputs": prompt, "max_length": 100})
+    return data[0]['generated_text']
 
 # Function to handle the generation of the workout routine
 def get_workout():
