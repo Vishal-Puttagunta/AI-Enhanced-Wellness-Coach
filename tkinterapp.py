@@ -1,38 +1,32 @@
 import tkinter as tk
-from tkinter import messagebox
-from workoutgenerate import generate_workout_routine  # Import the function
+from workoutgenerate import generate_workout_routine
 
-def generate_workout():
-    try:
-        # Get the score from the input field
-        score = int(score_entry.get())
-
-        # Call the imported function to generate the workout routine
-        workout_routine = generate_workout_routine(score)
-
-        # Display the generated workout routine
-        result_text.set(f"Workout Routine:\n{workout_routine}")
-
-    except ValueError:
-        # Handle invalid input
-        messagebox.showerror("Input Error", "Please enter a valid integer score.")
-
-# Create the main window
+# Create the main application window
 root = tk.Tk()
 root.title("Personalized Workout Generator")
+root.geometry("400x300")
 
-# Create and place widgets
-tk.Label(root, text="Enter Physical Capability Score:").pack(pady=10)
+# Function to handle the generation of the workout routine
+def get_workout():
+    try:
+        score = int(entry.get())  # Get the score from user input
+        result = generate_workout_routine(score)  # Generate the workout routine
+        output_label.config(text=f"Workout Routine:\n{result}")  # Display the result
+    except Exception as e:
+        output_label.config(text=f"Error: {e}")
 
-score_entry = tk.Entry(root)
-score_entry.pack(pady=5)
+# Create UI components
+label = tk.Label(root, text="Enter your Physical Capability Score:")
+label.pack(pady=10)
 
-generate_button = tk.Button(root, text="Generate Workout", command=generate_workout)
-generate_button.pack(pady=10)
+entry = tk.Entry(root)
+entry.pack(pady=10)
 
-result_text = tk.StringVar()
-result_label = tk.Label(root, textvariable=result_text, justify="left")
-result_label.pack(pady=20)
+button = tk.Button(root, text="Generate Workout", command=get_workout)
+button.pack(pady=10)
 
-# Run the app
+output_label = tk.Label(root, text="Your workout will appear here.")
+output_label.pack(pady=20)
+
+# Start the main loop of the application
 root.mainloop()
