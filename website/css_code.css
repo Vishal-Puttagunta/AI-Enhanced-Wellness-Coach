@@ -82,11 +82,13 @@ button.cta:hover {
 }
 
 .hero h2 {
+    margin-left: 15px;
     font-size: 36px;
     margin-bottom: 10px;
 }
 
 .hero p {
+    margin-left: 15px;
     font-size: 18px;
     margin-bottom: 20px;
 }
