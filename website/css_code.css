@@ -68,7 +68,7 @@ button.cta:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('your-image-url.jpg'); /* Replace with the URL of your hero image */
+    background-image: url('https://activesc.se/wp-content/uploads/2017/06/AdobeStock_96704112-e1497952887147.jpeg'); /* Replace with the URL of your hero image */
     background-size: cover;
     background-position: center;
     height: 500px;
