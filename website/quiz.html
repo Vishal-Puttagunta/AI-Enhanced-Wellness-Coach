@@ -52,9 +52,11 @@
             <p>2. What is your height?</p>
             <label for="height_ft">Height in feet:</label>
             <select id="height_ft" name="height_ft">
+                <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
                 <option value="6">6</option>
+                <option value="7">7</option>
             </select>
 
             <label for="height_in">Height in inches:</label>
@@ -108,13 +110,24 @@
             <p>6. Motivation Level</p>
             <div class="scale-container">
                 <input type="range" id="motivation_level" min="0" max="100" value="50" step="1">
-                <div class="value-display"><span id="value">50</span>%</div>
+                <div class="value-display"><span id="value">-</span>%</div>
             </div>
         </div>
 
         <!-- Submit Button -->
         <div style="text-align: center;">
-            <button type="button" id="submit_button" class="cta">Submit</button>
+            <button type="submit" id="submit_button" class="cta">Submit</button>
+
+            <script>
+                document.getElementById('wellnessQuiz').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevents the form from refreshing or submitting the default way
+                    // Here you can process any form validation or other logic before redirect
+                    window.location.href = 'submit.html'; // Redirect to the thank you page after submitting
+                });
+            </script>
+            
+
+            
         </div>
     </form>
 </div>
