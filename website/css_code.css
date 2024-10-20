@@ -51,6 +51,7 @@ nav a:hover {
 .content {
     text-align: center;
     padding-bottom: 20px;
+
 }
 
 
@@ -217,6 +218,14 @@ footer {
 
 #services {
     background-color: rgb(242, 203, 135);
-    padding-top: 20px;
-    padding-bottom: 90px;
+    padding-top: 75px;
+    padding-bottom: 160px;
 }
+
+#flexbox {
+    display: block;
+    justify-content: space-around;
+    
+}
+
+
