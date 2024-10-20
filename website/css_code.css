@@ -1,13 +1,15 @@
-body { 
-    font-family: 'Arial', sans-serif; 
-    margin: 0; 
-    padding: 0; 
-    background-color: #f4f4f4; 
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
+
 
 /* Header Styling */
 header {
     background-color: #fff;
+
 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -18,15 +20,20 @@ header {
 
 
 
+
+
+
 header h1 {
     color: #35424a;
     font-size: 24px;
 }
 
+
 nav {
     display: flex;
     gap: 20px;
 }
+
 
 nav a {
     color: #35424a;
@@ -35,14 +42,17 @@ nav a {
     font-size: 16px;
 }
 
+
 nav a:hover {
     color: #7cbd1e;
 }
+
 
 .content {
     text-align: center;
     padding-bottom: 20px;
 }
+
 
 /* Call to Action Button */
 button.cta {
@@ -59,9 +69,11 @@ button.cta {
     margin-top: 10px;
 }
 
+
 button.cta:hover {
     background-color: #e05d51;
 }
+
 
 /* Hero Section */
 .hero {
@@ -75,11 +87,13 @@ button.cta:hover {
     color: white;
 }
 
+
 .hero-content {
     max-width: 600px;
     text-align: left;
     margin-right: auto;
 }
+
 
 .hero h2 {
     margin-left: 15px;
@@ -87,11 +101,13 @@ button.cta:hover {
     margin-bottom: 10px;
 }
 
+
 .hero p {
     margin-left: 15px;
     font-size: 18px;
     margin-bottom: 20px;
 }
+
 
 .quiz_questions {
     text-align: center;
@@ -102,6 +118,7 @@ button.cta:hover {
     margin-left: 450px;
     padding-bottom: 20px;
 }
+
 
 .main-body {
     background-image: url("img1.png");
@@ -115,6 +132,7 @@ button.cta:hover {
     padding-bottom: 15px;
 }
 
+
 /* Icon Section (Features or Services) */
 .features {
     display: flex;
@@ -123,14 +141,18 @@ button.cta:hover {
     background-color: #f9f9f9;
 }
 
+
 .feature {
     text-align: center;
+    padding-bottom: 20px;
 }
+
 
 .feature img {
     width: 80px;
     margin-bottom: 10px;
 }
+
 
 .feature h3 {
     color: #35424a;
@@ -138,10 +160,12 @@ button.cta:hover {
     margin-bottom: 10px;
 }
 
+
 .feature p {
     font-size: 14px;
     color: #666;
 }
+
 
 /* Footer */
 footer {
@@ -153,27 +177,46 @@ footer {
     bottom: 0;
     width: 100%;
     position: fixed;
-    
-    
+   
+   
 }
+
 
 #contact {
     background-color: rgb(242, 203, 135);
     background-repeat: no-repeat;
-    
-    height: 1000px;
+   
+    height: 600px;
     padding-top: 20px;
     padding-right: 50px;
     text-align: center;
 }
 
+
 .content-components {
     padding-top: 250px;
 }
 
+
 #work-out {
-    background-image: url("closeup.jpg");
+    margin-top: 50px;
     border: 1px solid black;
+    border-radius: 50%;
+    object-fit: scale-down;
+
+
+    width: 300px;
+   
 }
 
 
+#home-footer {
+    margin-bottom: 50px;
+}
+
+
+#services {
+    background-color: rgb(242, 203, 135);
+    padding-top: 20px;
+    padding-bottom: 90px;
+}
