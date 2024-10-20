@@ -1,81 +1,81 @@
 import requests
 import tkinter as tk
+from tkinter import messagebox, scrolledtext  # Import scrolledtext for scrollable text area
 
-# Create the main application window
-root = tk.Tk()
-root.title("Personalized Workout Generator")
-root.geometry("400x300")
+# Set up your OpenAI API endpoint and API key
+API_URL = "https://api.openai.com/v1/chat/completions"  # OpenAI chat completion endpoint
+API_KEY = "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"  # Replace with your actual OpenAI API key
 
-# Set up your API key
-API_URL = "https://api-inference.huggingface.co/models/gpt2"  # You can change this to another model
-headers = {"Authorization": f"Bearer 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"}
+def generate_weekly_workout_routine(score):
+    # Create the input prompt for a weekly workout routine
+    input_prompt = (
+        f"You are an AI-powered workout routine generator. "
+        f"Create a personalized weekly workout routine for a person with a physical capability score of {score}.\n"
+        f"Provide a different workout for each day of the week, including:\n"
+        f"- Warm-up\n"
+        f"- Main workout with exercises, sets, and repetitions\n"
+        f"- Cool down\n"
+        f"Make sure the workouts vary in intensity throughout the week according to the given score.\n\n"
+        f"### Guidelines:\n"
+        f"- For scores between 1 and 20: Focus on basic movements suitable for beginners.\n"
+        f"- For scores between 21 and 40: Introduce moderate exercises with light weights.\n"
+        f"- For scores between 41 and 60: Incorporate a mix of strength training and cardio.\n"
+        f"- For scores between 61 and 80: Include high-intensity workouts with complex movements.\n"
+        f"- For scores between 81 and 100: Provide intense routines that may include heavy lifting and advanced techniques.\n"
+        f"Please generate the weekly workout routine."
+    )
 
-# Function to send request to Hugging Face's API
-def query(payload):
+    # Prepare the request to OpenAI API
+    headers = {
+        "Authorization": f"Bearer {API_KEY}",
+        "Content-Type": "application/json"
+    }
+    payload = {
+        "model": "gpt-3.5-turbo",  # Specify the model you want to use
+        "messages": [{"role": "user", "content": input_prompt}],
+        "max_tokens": 600,  # Adjust based on how detailed you want the output to be
+        "temperature": 0.9  # Adjust for creativity
+    }
+
+    # Make the API call
     response = requests.post(API_URL, headers=headers, json=payload)
-    return response.json()
 
-# Example usage: generating a workout routine
-def generate_workout_routine(score):
-    prompt = """1. For a score of 5:  
+    # Check the response
+    if response.status_code == 200:
+        data = response.json()
+        return data['choices'][0]['message']['content']  # Adjust based on actual API response format
+    else:
+        return f"Error: {response.status_code} - {response.text}"
 
-       - Monday: Chest and Back 
-
-       - Tuesday: Legs 
-
-       - Wednesday: Shoulders and Arms 
-
-       - Thursday: Cardio 
-
-       - Friday: Full Body 
-
-       - Saturday: Active Recovery 
-
-       - Sunday: Rest 
-
-  
-
-    2. For a score of 8: 
-
-       - Monday: Push (Bench Press, Overhead Press) 
-
-       - Tuesday: Pull (Pull-Ups, Rows) 
-
-       - Wednesday: Legs (Squats, Deadlifts) 
-
-       - Thursday: Core (Planks, Russian Twists) 
-
-       - Friday: Cardio (Running, HIIT) 
-
-       - Saturday: Flexibility (Yoga, Stretching) 
-
-       - Sunday: Rest 
-    """
-    
-    data = query({"inputs": prompt, "max_length": 100})
-    return data[0]['generated_text']
-
-# Function to handle the generation of the workout routine
-def get_workout():
+def generate_workout():
     try:
-        score = int(entry.get())  # Get the score from user input
-        result = generate_workout_routine(score)  # Generate the workout routine
-        output_label.config(text=f"Workout Routine:\n{result}")  # Display the result
-    except Exception as e:
-        output_label.config(text=f"Error: {e}")
+        # Get the score from the input field
+        score = int(score_entry.get())
+        # Call the function to generate the weekly workout routine
+        workout_routine = generate_weekly_workout_routine(score)
+        # Display the generated workout routine
+        result_text.delete(1.0, tk.END)  # Clear previous text
+        result_text.insert(tk.END, f"Weekly Workout Routine:\n{workout_routine}")  # Insert new text
+    except ValueError:
+        # Handle invalid input
+        messagebox.showerror("Input Error", "Please enter a valid integer score.")
 
-# Create UI components
-label = tk.Label(root, text="Enter your Physical Capability Score:")
-label.pack(pady=10)
+# Create the main window
+root = tk.Tk()
+root.title("Personalized Weekly Workout Generator")
 
-entry = tk.Entry(root)
-entry.pack(pady=10)
+# Create and place widgets
+tk.Label(root, text="Enter Physical Capability Score:").pack(pady=10)
 
-button = tk.Button(root, text="Generate Workout", command=get_workout)
-button.pack(pady=10)
+score_entry = tk.Entry(root)
+score_entry.pack(pady=5)
 
-output_label = tk.Label(root, text="Your workout will appear here.")
-output_label.pack(pady=20)
+generate_button = tk.Button(root, text="Generate Weekly Workout", command=generate_workout)
+generate_button.pack(pady=10)
 
-# Start the main loop of the application
+# Use a scrolled text widget for displaying the output
+result_text = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=60, height=20)  # Change width and height as needed
+result_text.pack(pady=20)
+
+# Start the GUI event loop
 root.mainloop()
